@@ -1,23 +1,17 @@
-FROM --platform=linux/amd64 golang:1.17-alpine AS builder
-
-WORKDIR /go/src
-
-COPY internal ./internal
-COPY cmd ./cmd
-COPY go.mod .
-COPY go.sum .
-
-# Build 
-RUN go build -o main ./cmd/main.go
-
-FROM --platform=linux/amd64 alpine AS runtime
+FROM --platform=linux/amd64 node:17-alpine
 
 WORKDIR /app
+RUN apk add g++ make python3
 
-RUN addgroup beaker && \
-    adduser --gecos "" --ingroup beaker --disabled-password beaker
+COPY server ./
+COPY package.json .
+COPY package-lock.json .
 
-USER beaker:beaker
-COPY --from=builder --chown=beaker:beaker /go/src/main .
+RUN npm install
 
-ENTRYPOINT ["/app/main"]
+#RUN addgroup beaker && \
+#    adduser --gecos "" --ingroup beaker --disabled-password beaker
+#
+#USER beaker:beaker
+
+ENTRYPOINT ["node", "server/index.js"]
