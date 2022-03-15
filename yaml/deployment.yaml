@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echo
+  name: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: echo
+      name: backend
   template:
     metadata:
       labels:
-        name: echo
+        name: backend
     spec:
       containers:
-      - name: echo
-        image: docker.io/freegroup/thindexed-echo:0.1.0-48
+      - name: backend
+        image: docker.io/freegroup/thindexed-backend:0.1.0-3
