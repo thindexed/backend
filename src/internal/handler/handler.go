@@ -1,8 +1,9 @@
 package handler
 
 import (
+	"thindexed/backend/internal/handler/fortune"
+
 	"github.com/gorilla/mux"
-	"github.com/thindexed/backend/pkg/handler/fortune"
 )
 
 func RegisterHandlers(mux *mux.Router) {

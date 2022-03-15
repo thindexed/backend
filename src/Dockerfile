@@ -8,7 +8,7 @@ COPY go.mod .
 COPY go.sum .
 
 # Build 
-RUN go build -o main ./cmd/fortune/main.go
+RUN go build -o main ./cmd/main.go
 
 FROM --platform=linux/amd64 alpine AS runtime
 
@@ -19,6 +19,5 @@ RUN addgroup beaker && \
 
 USER beaker:beaker
 COPY --from=builder --chown=beaker:beaker /go/src/main .
-COPY --from=builder --chown=beaker:beaker /go/src/internal/lib ./internal/lib
 
 ENTRYPOINT ["/app/main"]

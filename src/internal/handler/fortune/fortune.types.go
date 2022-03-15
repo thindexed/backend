@@ -1,4 +1,4 @@
-package destination
+package fortune
 
 type FortuneMsg struct {
 	Fortune string `json:"fortune"`
