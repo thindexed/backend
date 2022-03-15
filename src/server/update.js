@@ -64,7 +64,6 @@ module.exports = {
       console.log("Error during shape file updates")
     })
   },
-
   
   commitShape: function(localPath, githubPath, commitMessage){
     if(GITHUB_TOKEN === null) {
