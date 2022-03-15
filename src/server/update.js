@@ -65,7 +65,6 @@ module.exports = {
     })
   },
 
-  
   commitShape: function(localPath, githubPath, commitMessage){
     if(GITHUB_TOKEN === null) {
       console.log('Upload of Shapes to the Repo is not possible due of missing GITHUB_TOKEN environment variable.')
