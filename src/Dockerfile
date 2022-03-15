@@ -17,4 +17,4 @@ RUN chmod 755 /app
 
 USER beaker:beaker
 
-ENTRYPOINT ["node", "--folder", "/app", "server/index.js"]
+ENTRYPOINT ["node", "server/index.js", "--folder", "/app"]
