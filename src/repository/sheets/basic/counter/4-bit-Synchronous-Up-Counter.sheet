@@ -219,7 +219,7 @@
                 ]
               },
               {
-                "type": "circuit_digital_signals_High",
+                "type": "circuit_digital_signal_High",
                 "id": "05b87f73-ca72-4ea8-4f9c-fe97e531d109",
                 "x": 2682,
                 "y": 3017,
@@ -232,7 +232,7 @@
                 "userData": {
                   "file": "signals/High.shape"
                 },
-                "cssClass": "circuit_digital_signals_High",
+                "cssClass": "circuit_digital_signal_High",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
