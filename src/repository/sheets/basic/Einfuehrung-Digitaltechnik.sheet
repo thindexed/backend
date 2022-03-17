@@ -309,7 +309,7 @@
                 ]
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "e85cc0ae-803c-e65c-d0fb-096d40082f75",
                 "x": 2651,
                 "y": 2920.390625,
@@ -323,7 +323,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E1"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -332,7 +332,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "e86bc794-d54e-68a1-a049-8316ed8de0bf",
                 "x": 2651,
                 "y": 2960.390625,
@@ -346,7 +346,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E1"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -355,7 +355,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalTarget",
+                "type": "circuit_digital_signal_SignalTarget",
                 "id": "d04e0395-712e-a236-ba44-9c78223dc558",
                 "x": 3017,
                 "y": 2935.390625,
@@ -369,7 +369,7 @@
                   "file": "circuit/digital/signals/SignalTarget.shape",
                   "signalId": "A2"
                 },
-                "cssClass": "circuit_digital_signals_SignalTarget",
+                "cssClass": "circuit_digital_signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -378,7 +378,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "873e11c5-7133-f42f-7ba2-b0b0931a11cc",
                 "x": 2891,
                 "y": 2972.390625,
@@ -392,7 +392,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E4"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -828,7 +828,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "d1161bf9-30b2-7a88-4b27-55ba5534feba",
                 "x": 2531,
                 "y": 2937.390625,
@@ -842,7 +842,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E1"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -851,7 +851,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "31af4514-0897-5dc9-dd2a-5ee0817788da",
                 "x": 2531,
                 "y": 2998.390625,
@@ -865,7 +865,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E2"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -874,7 +874,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "fd24b2d2-2c23-bb21-2164-b8979470fa25",
                 "x": 2531,
                 "y": 3061.390625,
@@ -888,7 +888,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E3"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -897,7 +897,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalTarget",
+                "type": "circuit_digital_signal_SignalTarget",
                 "id": "0321fbe2-4a76-2cdf-4a09-fb42c41c6451",
                 "x": 3130,
                 "y": 2942.390625,
@@ -911,7 +911,7 @@
                   "file": "circuit/digital/signals/SignalTarget.shape",
                   "signalId": "E"
                 },
-                "cssClass": "circuit_digital_signals_SignalTarget",
+                "cssClass": "circuit_digital_signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -1348,7 +1348,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "48cf4f4b-ebce-afb4-7156-fe4bd24b9c0d",
                 "x": 2566,
                 "y": 3026.390625,
@@ -1362,7 +1362,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E1"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -1371,7 +1371,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "fe8a957e-55ed-ba82-daa8-42308670a373",
                 "x": 2566,
                 "y": 3159.390625,
@@ -1385,7 +1385,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E3"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -1394,7 +1394,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalSource",
+                "type": "circuit_digital_signal_SignalSource",
                 "id": "80143fbe-e87c-9d19-9a1d-52183440d5b6",
                 "x": 2566,
                 "y": 3094.390625,
@@ -1408,7 +1408,7 @@
                   "file": "circuit/digital/signals/SignalSource.shape",
                   "signalId": "E2"
                 },
-                "cssClass": "circuit_digital_signals_SignalSource",
+                "cssClass": "circuit_digital_signal_SignalSource",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -1417,7 +1417,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_SignalTarget",
+                "type": "circuit_digital_signal_SignalTarget",
                 "id": "0aded1a0-434b-24c0-5cfe-08fbecfe133d",
                 "x": 3142,
                 "y": 3037.390625,
@@ -1431,7 +1431,7 @@
                   "file": "circuit/digital/signals/SignalTarget.shape",
                   "signalId": "Signal_Id"
                 },
-                "cssClass": "circuit_digital_signals_SignalTarget",
+                "cssClass": "circuit_digital_signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -1440,7 +1440,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signals_Low",
+                "type": "circuit_digital_signal_Low",
                 "id": "fcfa9b3b-7d5d-bcbf-2f5f-ca234f255c12",
                 "x": 2784.5,
                 "y": 3082.390625,
@@ -1453,7 +1453,7 @@
                 "userData": {
                   "file": "circuit/digital/signals/Low.shape"
                 },
-                "cssClass": "circuit_digital_signals_Low",
+                "cssClass": "circuit_digital_signal_Low",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,

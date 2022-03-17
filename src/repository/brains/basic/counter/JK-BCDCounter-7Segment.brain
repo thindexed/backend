@@ -431,7 +431,7 @@
       "labels": []
     },
     {
-      "type": "circuit_digital_signals_SignalTarget",
+      "type": "circuit_digital_signal_SignalTarget",
       "id": "db470c07-6795-42d8-78f3-74949c4999a7",
       "x": 1995,
       "y": 3206.561199999999,
@@ -445,7 +445,7 @@
         "file": "signals/SignalTarget.shape",
         "signalId": "CLK"
       },
-      "cssClass": "circuit_digital_signals_SignalTarget",
+      "cssClass": "circuit_digital_signal_SignalTarget",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,
@@ -454,7 +454,7 @@
       "labels": []
     },
     {
-      "type": "circuit_digital_signals_SignalSource",
+      "type": "circuit_digital_signal_SignalSource",
       "id": "6da6d86a-6a88-8dcc-6bdd-86a8f7401ad5",
       "x": 2096.640625,
       "y": 3234.438800000001,
@@ -468,7 +468,7 @@
         "file": "signals/SignalSource.shape",
         "signalId": "CLK"
       },
-      "cssClass": "circuit_digital_signals_SignalSource",
+      "cssClass": "circuit_digital_signal_SignalSource",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,
@@ -477,7 +477,7 @@
       "labels": []
     },
     {
-      "type": "circuit_digital_signals_SignalSource",
+      "type": "circuit_digital_signal_SignalSource",
       "id": "a2ad6f90-db7e-839e-e61c-2e463cd02167",
       "x": 2286.9609375,
       "y": 3284,
@@ -491,7 +491,7 @@
         "file": "signals/SignalSource.shape",
         "signalId": "CLK"
       },
-      "cssClass": "circuit_digital_signals_SignalSource",
+      "cssClass": "circuit_digital_signal_SignalSource",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,
@@ -500,7 +500,7 @@
       "labels": []
     },
     {
-      "type": "circuit_digital_signals_SignalSource",
+      "type": "circuit_digital_signal_SignalSource",
       "id": "190b06e7-c0b7-4304-f324-ceb08912d1f8",
       "x": 2504.9609375,
       "y": 3284,
@@ -514,7 +514,7 @@
         "file": "signals/SignalSource.shape",
         "signalId": "CLK"
       },
-      "cssClass": "circuit_digital_signals_SignalSource",
+      "cssClass": "circuit_digital_signal_SignalSource",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,
@@ -523,7 +523,7 @@
       "labels": []
     },
     {
-      "type": "circuit_digital_signals_SignalSource",
+      "type": "circuit_digital_signal_SignalSource",
       "id": "b57e9b87-4a28-18df-60ce-3257e8ff16d5",
       "x": 2721.9609375,
       "y": 3234.438800000001,
@@ -537,7 +537,7 @@
         "file": "signals/SignalSource.shape",
         "signalId": "CLK"
       },
-      "cssClass": "circuit_digital_signals_SignalSource",
+      "cssClass": "circuit_digital_signal_SignalSource",
       "bgColor": "rgba(0,0,0,0)",
       "color": "rgba(27,27,27,1)",
       "stroke": 0,
