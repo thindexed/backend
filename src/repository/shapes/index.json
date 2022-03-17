@@ -1,0 +1,1347 @@
+[
+  {
+    "name": "circuit_74LSXX_74LS90",
+    "tags": [
+      "circuit",
+      "74LSXX",
+      "74LS90"
+    ],
+    "version": "local-version",
+    "basename": "74LS90.js",
+    "displayName": "74LS90",
+    "basedir": "circuit/74LSXX",
+    "filePath": "circuit/74LSXX/74LS90.shape",
+    "image": "circuit/74LSXX/74LS90.png"
+  },
+  {
+    "name": "circuit_digital_alu_FullAdder",
+    "tags": [
+      "circuit",
+      "digital",
+      "alu",
+      "FullAdder"
+    ],
+    "version": "local-version",
+    "basename": "FullAdder.js",
+    "displayName": "FullAdder",
+    "basedir": "circuit/digital/alu",
+    "filePath": "circuit/digital/alu/FullAdder.shape",
+    "image": "circuit/digital/alu/FullAdder.png"
+  },
+  {
+    "name": "circuit_digital_alu_FullAdder4Bit",
+    "tags": [
+      "circuit",
+      "digital",
+      "alu",
+      "FullAdder4Bit"
+    ],
+    "version": "local-version",
+    "basename": "FullAdder4Bit.js",
+    "displayName": "FullAdder4Bit",
+    "basedir": "circuit/digital/alu",
+    "filePath": "circuit/digital/alu/FullAdder4Bit.shape",
+    "image": "circuit/digital/alu/FullAdder4Bit.png"
+  },
+  {
+    "name": "circuit_digital_buttons_HighLow",
+    "tags": [
+      "circuit",
+      "digital",
+      "buttons",
+      "HighLow"
+    ],
+    "version": "local-version",
+    "basename": "HighLow.js",
+    "displayName": "HighLow",
+    "basedir": "circuit/digital/buttons",
+    "filePath": "circuit/digital/buttons/HighLow.shape",
+    "image": "circuit/digital/buttons/HighLow.png"
+  },
+  {
+    "name": "circuit_digital_buttons_HighLowArray",
+    "tags": [
+      "circuit",
+      "digital",
+      "buttons",
+      "HighLowArray"
+    ],
+    "version": "local-version",
+    "basename": "HighLowArray.js",
+    "displayName": "HighLowArray",
+    "basedir": "circuit/digital/buttons",
+    "filePath": "circuit/digital/buttons/HighLowArray.shape",
+    "image": "circuit/digital/buttons/HighLowArray.png"
+  },
+  {
+    "name": "circuit_digital_buttons_PushButton",
+    "tags": [
+      "circuit",
+      "digital",
+      "buttons",
+      "PushButton"
+    ],
+    "version": "local-version",
+    "basename": "PushButton.js",
+    "displayName": "PushButton",
+    "basedir": "circuit/digital/buttons",
+    "filePath": "circuit/digital/buttons/PushButton.shape",
+    "image": "circuit/digital/buttons/PushButton.png"
+  },
+  {
+    "name": "circuit_digital_counter_BCDCounter",
+    "tags": [
+      "circuit",
+      "digital",
+      "counter",
+      "BCDCounter"
+    ],
+    "version": "local-version",
+    "basename": "BCDCounter.js",
+    "displayName": "BCDCounter",
+    "basedir": "circuit/digital/counter",
+    "filePath": "circuit/digital/counter/BCDCounter.shape",
+    "image": "circuit/digital/counter/BCDCounter.png"
+  },
+  {
+    "name": "circuit_digital_decoder_BCDto7Seg",
+    "tags": [
+      "circuit",
+      "digital",
+      "decoder",
+      "BCDto7Seg"
+    ],
+    "version": "local-version",
+    "basename": "BCDto7Seg.js",
+    "displayName": "BCDto7Seg",
+    "basedir": "circuit/digital/decoder",
+    "filePath": "circuit/digital/decoder/BCDto7Seg.shape",
+    "image": "circuit/digital/decoder/BCDto7Seg.png"
+  },
+  {
+    "name": "circuit_digital_display_7Segment",
+    "tags": [
+      "circuit",
+      "digital",
+      "display",
+      "7Segment"
+    ],
+    "version": "local-version",
+    "basename": "7Segment.js",
+    "displayName": "7Segment",
+    "basedir": "circuit/digital/display",
+    "filePath": "circuit/digital/display/7Segment.shape",
+    "image": "circuit/digital/display/7Segment.png"
+  },
+  {
+    "name": "circuit_digital_display_Led",
+    "tags": [
+      "circuit",
+      "digital",
+      "display",
+      "Led"
+    ],
+    "version": "local-version",
+    "basename": "Led.js",
+    "displayName": "Led",
+    "basedir": "circuit/digital/display",
+    "filePath": "circuit/digital/display/Led.shape",
+    "image": "circuit/digital/display/Led.png"
+  },
+  {
+    "name": "circuit_digital_flipflop_DFlipFlop",
+    "tags": [
+      "circuit",
+      "digital",
+      "flipflop",
+      "DFlipFlop"
+    ],
+    "version": "local-version",
+    "basename": "DFlipFlop.js",
+    "displayName": "DFlipFlop",
+    "basedir": "circuit/digital/flipflop",
+    "filePath": "circuit/digital/flipflop/DFlipFlop.shape",
+    "image": "circuit/digital/flipflop/DFlipFlop.png"
+  },
+  {
+    "name": "circuit_digital_flipflop_JKFlipFlop",
+    "tags": [
+      "circuit",
+      "digital",
+      "flipflop",
+      "JKFlipFlop"
+    ],
+    "version": "local-version",
+    "basename": "JKFlipFlop.js",
+    "displayName": "JKFlipFlop",
+    "basedir": "circuit/digital/flipflop",
+    "filePath": "circuit/digital/flipflop/JKFlipFlop.shape",
+    "image": "circuit/digital/flipflop/JKFlipFlop.png"
+  },
+  {
+    "name": "circuit_digital_flipflop_JKRFlipFlop",
+    "tags": [
+      "circuit",
+      "digital",
+      "flipflop",
+      "JKRFlipFlop"
+    ],
+    "version": "local-version",
+    "basename": "JKRFlipFlop.js",
+    "displayName": "JKRFlipFlop",
+    "basedir": "circuit/digital/flipflop",
+    "filePath": "circuit/digital/flipflop/JKRFlipFlop.shape",
+    "image": "circuit/digital/flipflop/JKRFlipFlop.png"
+  },
+  {
+    "name": "circuit_digital_flipflop_SRFlipFlop",
+    "tags": [
+      "circuit",
+      "digital",
+      "flipflop",
+      "SRFlipFlop"
+    ],
+    "version": "local-version",
+    "basename": "SRFlipFlop.js",
+    "displayName": "SRFlipFlop",
+    "basedir": "circuit/digital/flipflop",
+    "filePath": "circuit/digital/flipflop/SRFlipFlop.shape",
+    "image": "circuit/digital/flipflop/SRFlipFlop.png"
+  },
+  {
+    "name": "circuit_digital_flipflop_TFlipFlop",
+    "tags": [
+      "circuit",
+      "digital",
+      "flipflop",
+      "TFlipFlop"
+    ],
+    "version": "local-version",
+    "basename": "TFlipFlop.js",
+    "displayName": "TFlipFlop",
+    "basedir": "circuit/digital/flipflop",
+    "filePath": "circuit/digital/flipflop/TFlipFlop.shape",
+    "image": "circuit/digital/flipflop/TFlipFlop.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_AND",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "AND"
+    ],
+    "version": "local-version",
+    "basename": "AND.js",
+    "displayName": "AND",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/AND.shape",
+    "image": "circuit/digital/gate/DIN40700/AND.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_NAND",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "NAND"
+    ],
+    "version": "local-version",
+    "basename": "NAND.js",
+    "displayName": "NAND",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/NAND.shape",
+    "image": "circuit/digital/gate/DIN40700/NAND.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_NOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "NOR"
+    ],
+    "version": "local-version",
+    "basename": "NOR.js",
+    "displayName": "NOR",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/NOR.shape",
+    "image": "circuit/digital/gate/DIN40700/NOR.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_OR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "OR"
+    ],
+    "version": "local-version",
+    "basename": "OR.js",
+    "displayName": "OR",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/OR.shape",
+    "image": "circuit/digital/gate/DIN40700/OR.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_XNOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "XNOR"
+    ],
+    "version": "local-version",
+    "basename": "XNOR.js",
+    "displayName": "XNOR",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/XNOR.shape",
+    "image": "circuit/digital/gate/DIN40700/XNOR.png"
+  },
+  {
+    "name": "circuit_digital_gate_DIN40700_XOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "DIN40700",
+      "XOR"
+    ],
+    "version": "local-version",
+    "basename": "XOR.js",
+    "displayName": "XOR",
+    "basedir": "circuit/digital/gate/DIN40700",
+    "filePath": "circuit/digital/gate/DIN40700/XOR.shape",
+    "image": "circuit/digital/gate/DIN40700/XOR.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_AND",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "AND"
+    ],
+    "version": "local-version",
+    "basename": "AND.js",
+    "displayName": "AND",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/AND.shape",
+    "image": "circuit/digital/gate/IEC60617-12/AND.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_NAND",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "NAND"
+    ],
+    "version": "local-version",
+    "basename": "NAND.js",
+    "displayName": "NAND",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/NAND.shape",
+    "image": "circuit/digital/gate/IEC60617-12/NAND.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_NOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "NOR"
+    ],
+    "version": "local-version",
+    "basename": "NOR.js",
+    "displayName": "NOR",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/NOR.shape",
+    "image": "circuit/digital/gate/IEC60617-12/NOR.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_NOT",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "NOT"
+    ],
+    "version": "local-version",
+    "basename": "NOT.js",
+    "displayName": "NOT",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/NOT.shape",
+    "image": "circuit/digital/gate/IEC60617-12/NOT.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_OR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "OR"
+    ],
+    "version": "local-version",
+    "basename": "OR.js",
+    "displayName": "OR",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/OR.shape",
+    "image": "circuit/digital/gate/IEC60617-12/OR.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_XNOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "XNOR"
+    ],
+    "version": "local-version",
+    "basename": "XNOR.js",
+    "displayName": "XNOR",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/XNOR.shape",
+    "image": "circuit/digital/gate/IEC60617-12/XNOR.png"
+  },
+  {
+    "name": "circuit_digital_gate_IEC60617_12_XOR",
+    "tags": [
+      "circuit",
+      "digital",
+      "gate",
+      "IEC60617",
+      "12",
+      "XOR"
+    ],
+    "version": "local-version",
+    "basename": "XOR.js",
+    "displayName": "XOR",
+    "basedir": "circuit/digital/gate/IEC60617-12",
+    "filePath": "circuit/digital/gate/IEC60617-12/XOR.shape",
+    "image": "circuit/digital/gate/IEC60617-12/XOR.png"
+  },
+  {
+    "name": "circuit_digital_pulse_10hz",
+    "tags": [
+      "circuit",
+      "digital",
+      "pulse",
+      "10hz"
+    ],
+    "version": "local-version",
+    "basename": "10hz.js",
+    "displayName": "10hz",
+    "basedir": "circuit/digital/pulse",
+    "filePath": "circuit/digital/pulse/10hz.shape",
+    "image": "circuit/digital/pulse/10hz.png"
+  },
+  {
+    "name": "circuit_digital_pulse_1hz",
+    "tags": [
+      "circuit",
+      "digital",
+      "pulse",
+      "1hz"
+    ],
+    "version": "local-version",
+    "basename": "1hz.js",
+    "displayName": "1hz",
+    "basedir": "circuit/digital/pulse",
+    "filePath": "circuit/digital/pulse/1hz.shape",
+    "image": "circuit/digital/pulse/1hz.png"
+  },
+  {
+    "name": "circuit_digital_pulse_50hz",
+    "tags": [
+      "circuit",
+      "digital",
+      "pulse",
+      "50hz"
+    ],
+    "version": "local-version",
+    "basename": "50hz.js",
+    "displayName": "50hz",
+    "basedir": "circuit/digital/pulse",
+    "filePath": "circuit/digital/pulse/50hz.shape",
+    "image": "circuit/digital/pulse/50hz.png"
+  },
+  {
+    "name": "circuit_digital_pulse_Delay",
+    "tags": [
+      "circuit",
+      "digital",
+      "pulse",
+      "Delay"
+    ],
+    "version": "local-version",
+    "basename": "Delay.js",
+    "displayName": "Delay",
+    "basedir": "circuit/digital/pulse",
+    "filePath": "circuit/digital/pulse/Delay.shape",
+    "image": "circuit/digital/pulse/Delay.png"
+  },
+  {
+    "name": "circuit_digital_signal_High",
+    "tags": [
+      "circuit",
+      "digital",
+      "signal",
+      "High"
+    ],
+    "version": "local-version",
+    "basename": "High.js",
+    "displayName": "High",
+    "basedir": "circuit/digital/signal",
+    "filePath": "circuit/digital/signal/High.shape",
+    "image": "circuit/digital/signal/High.png"
+  },
+  {
+    "name": "circuit_digital_signal_Low",
+    "tags": [
+      "circuit",
+      "digital",
+      "signal",
+      "Low"
+    ],
+    "version": "local-version",
+    "basename": "Low.js",
+    "displayName": "Low",
+    "basedir": "circuit/digital/signal",
+    "filePath": "circuit/digital/signal/Low.shape",
+    "image": "circuit/digital/signal/Low.png"
+  },
+  {
+    "name": "circuit_digital_timer_Delay",
+    "tags": [
+      "circuit",
+      "digital",
+      "timer",
+      "Delay"
+    ],
+    "version": "local-version",
+    "basename": "Delay.js",
+    "displayName": "Delay",
+    "basedir": "circuit/digital/timer",
+    "filePath": "circuit/digital/timer/Delay.shape",
+    "image": "circuit/digital/timer/Delay.png"
+  },
+  {
+    "name": "documentation_Markdown",
+    "tags": [
+      "documentation",
+      "Markdown"
+    ],
+    "version": "local-version",
+    "basename": "Markdown.js",
+    "displayName": "Markdown",
+    "basedir": "documentation",
+    "filePath": "documentation/Markdown.shape",
+    "image": "documentation/Markdown.png"
+  },
+  {
+    "name": "documentation_Text",
+    "tags": [
+      "documentation",
+      "Text"
+    ],
+    "version": "local-version",
+    "basename": "Text.js",
+    "displayName": "Text",
+    "basedir": "documentation",
+    "filePath": "documentation/Text.shape",
+    "image": "documentation/Text.png"
+  },
+  {
+    "name": "hardware_arduino_Arduino",
+    "tags": [
+      "hardware",
+      "arduino",
+      "Arduino"
+    ],
+    "version": "local-version",
+    "basename": "Arduino.js",
+    "displayName": "Arduino",
+    "basedir": "hardware/arduino",
+    "filePath": "hardware/arduino/Arduino.shape",
+    "image": "hardware/arduino/Arduino.png"
+  },
+  {
+    "name": "hardware_arduino_Led",
+    "tags": [
+      "hardware",
+      "arduino",
+      "Led"
+    ],
+    "version": "local-version",
+    "basename": "Led.js",
+    "displayName": "Led",
+    "basedir": "hardware/arduino",
+    "filePath": "hardware/arduino/Led.shape",
+    "image": "hardware/arduino/Led.png"
+  },
+  {
+    "name": "hardware_raspi_GPIORead",
+    "tags": [
+      "hardware",
+      "raspi",
+      "GPIORead"
+    ],
+    "version": "local-version",
+    "basename": "GPIORead.js",
+    "displayName": "GPIORead",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/GPIORead.shape",
+    "image": "hardware/raspi/GPIORead.png"
+  },
+  {
+    "name": "hardware_raspi_GPIOWrite",
+    "tags": [
+      "hardware",
+      "raspi",
+      "GPIOWrite"
+    ],
+    "version": "local-version",
+    "basename": "GPIOWrite.js",
+    "displayName": "GPIOWrite",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/GPIOWrite.shape",
+    "image": "hardware/raspi/GPIOWrite.png"
+  },
+  {
+    "name": "hardware_raspi_PCA9685Motor",
+    "tags": [
+      "hardware",
+      "raspi",
+      "PCA9685Motor"
+    ],
+    "version": "local-version",
+    "basename": "PCA9685Motor.js",
+    "displayName": "PCA9685Motor",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/PCA9685Motor.shape",
+    "image": "hardware/raspi/PCA9685Motor.png"
+  },
+  {
+    "name": "hardware_raspi_PCA9685Servo",
+    "tags": [
+      "hardware",
+      "raspi",
+      "PCA9685Servo"
+    ],
+    "version": "local-version",
+    "basename": "PCA9685Servo.js",
+    "displayName": "PCA9685Servo",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/PCA9685Servo.shape",
+    "image": "hardware/raspi/PCA9685Servo.png"
+  },
+  {
+    "name": "hardware_raspi_PWMWrite",
+    "tags": [
+      "hardware",
+      "raspi",
+      "PWMWrite"
+    ],
+    "version": "local-version",
+    "basename": "PWMWrite.js",
+    "displayName": "PWMWrite",
+    "basedir": "hardware/raspi",
+    "filePath": "hardware/raspi/PWMWrite.shape",
+    "image": "hardware/raspi/PWMWrite.png"
+  },
+  {
+    "name": "math_Mean",
+    "tags": [
+      "math",
+      "Mean"
+    ],
+    "version": "local-version",
+    "basename": "Mean.js",
+    "displayName": "Mean",
+    "basedir": "math",
+    "filePath": "math/Mean.shape",
+    "image": "math/Mean.png"
+  },
+  {
+    "name": "messaging_HiveMQ",
+    "tags": [
+      "messaging",
+      "HiveMQ"
+    ],
+    "version": "local-version",
+    "basename": "HiveMQ.js",
+    "displayName": "HiveMQ",
+    "basedir": "messaging",
+    "filePath": "messaging/HiveMQ.shape",
+    "image": "messaging/HiveMQ.png"
+  },
+  {
+    "name": "signal_SignalInverter",
+    "tags": [
+      "signal",
+      "SignalInverter"
+    ],
+    "version": "local-version",
+    "basename": "SignalInverter.js",
+    "displayName": "SignalInverter",
+    "basedir": "signal",
+    "filePath": "signal/SignalInverter.shape",
+    "image": "signal/SignalInverter.png"
+  },
+  {
+    "name": "signal_SignalSource",
+    "tags": [
+      "signal",
+      "SignalSource"
+    ],
+    "version": "local-version",
+    "basename": "SignalSource.js",
+    "displayName": "SignalSource",
+    "basedir": "signal",
+    "filePath": "signal/SignalSource.shape",
+    "image": "signal/SignalSource.png"
+  },
+  {
+    "name": "signal_SignalSwitch",
+    "tags": [
+      "signal",
+      "SignalSwitch"
+    ],
+    "version": "local-version",
+    "basename": "SignalSwitch.js",
+    "displayName": "SignalSwitch",
+    "basedir": "signal",
+    "filePath": "signal/SignalSwitch.shape",
+    "image": "signal/SignalSwitch.png"
+  },
+  {
+    "name": "signal_SignalTarget",
+    "tags": [
+      "signal",
+      "SignalTarget"
+    ],
+    "version": "local-version",
+    "basename": "SignalTarget.js",
+    "displayName": "SignalTarget",
+    "basedir": "signal",
+    "filePath": "signal/SignalTarget.shape",
+    "image": "signal/SignalTarget.png"
+  },
+  {
+    "name": "video_assemble_Stencil",
+    "tags": [
+      "video",
+      "assemble",
+      "Stencil"
+    ],
+    "version": "local-version",
+    "basename": "Stencil.js",
+    "displayName": "Stencil",
+    "basedir": "video/assemble",
+    "filePath": "video/assemble/Stencil.shape",
+    "image": "video/assemble/Stencil.png"
+  },
+  {
+    "name": "video_color_BlackWhite",
+    "tags": [
+      "video",
+      "color",
+      "BlackWhite"
+    ],
+    "version": "local-version",
+    "basename": "BlackWhite.js",
+    "displayName": "BlackWhite",
+    "basedir": "video/color",
+    "filePath": "video/color/BlackWhite.shape",
+    "image": "video/color/BlackWhite.png"
+  },
+  {
+    "name": "video_color_Grayscale",
+    "tags": [
+      "video",
+      "color",
+      "Grayscale"
+    ],
+    "version": "local-version",
+    "basename": "Grayscale.js",
+    "displayName": "Grayscale",
+    "basedir": "video/color",
+    "filePath": "video/color/Grayscale.shape",
+    "image": "video/color/Grayscale.png"
+  },
+  {
+    "name": "video_color_GrayscaleAvg",
+    "tags": [
+      "video",
+      "color",
+      "GrayscaleAvg"
+    ],
+    "version": "local-version",
+    "basename": "GrayscaleAvg.js",
+    "displayName": "GrayscaleAvg",
+    "basedir": "video/color",
+    "filePath": "video/color/GrayscaleAvg.shape",
+    "image": "video/color/GrayscaleAvg.png"
+  },
+  {
+    "name": "video_color_HSV_Colorspace",
+    "tags": [
+      "video",
+      "color",
+      "HSV",
+      "Colorspace"
+    ],
+    "version": "local-version",
+    "basename": "HSV-Colorspace.js",
+    "displayName": "HSV-Colorspace",
+    "basedir": "video/color",
+    "filePath": "video/color/HSV-Colorspace.shape",
+    "image": "video/color/HSV-Colorspace.png"
+  },
+  {
+    "name": "video_color_Invert",
+    "tags": [
+      "video",
+      "color",
+      "Invert"
+    ],
+    "version": "local-version",
+    "basename": "Invert.js",
+    "displayName": "Invert",
+    "basedir": "video/color",
+    "filePath": "video/color/Invert.shape",
+    "image": "video/color/Invert.png"
+  },
+  {
+    "name": "video_color_JustBlack",
+    "tags": [
+      "video",
+      "color",
+      "JustBlack"
+    ],
+    "version": "local-version",
+    "basename": "JustBlack.js",
+    "displayName": "JustBlack",
+    "basedir": "video/color",
+    "filePath": "video/color/JustBlack.shape",
+    "image": "video/color/JustBlack.png"
+  },
+  {
+    "name": "video_color_Luminance",
+    "tags": [
+      "video",
+      "color",
+      "Luminance"
+    ],
+    "version": "local-version",
+    "basename": "Luminance.js",
+    "displayName": "Luminance",
+    "basedir": "video/color",
+    "filePath": "video/color/Luminance.shape",
+    "image": "video/color/Luminance.png"
+  },
+  {
+    "name": "video_color_RGBSplitter",
+    "tags": [
+      "video",
+      "color",
+      "RGBSplitter"
+    ],
+    "version": "local-version",
+    "basename": "RGBSplitter.js",
+    "displayName": "RGBSplitter",
+    "basedir": "video/color",
+    "filePath": "video/color/RGBSplitter.shape",
+    "image": "video/color/RGBSplitter.png"
+  },
+  {
+    "name": "video_color_Splitter",
+    "tags": [
+      "video",
+      "color",
+      "Splitter"
+    ],
+    "version": "local-version",
+    "basename": "Splitter.js",
+    "displayName": "Splitter",
+    "basedir": "video/color",
+    "filePath": "video/color/Splitter.shape",
+    "image": "video/color/Splitter.png"
+  },
+  {
+    "name": "video_color_WhiteBlack",
+    "tags": [
+      "video",
+      "color",
+      "WhiteBlack"
+    ],
+    "version": "local-version",
+    "basename": "WhiteBlack.js",
+    "displayName": "WhiteBlack",
+    "basedir": "video/color",
+    "filePath": "video/color/WhiteBlack.shape",
+    "image": "video/color/WhiteBlack.png"
+  },
+  {
+    "name": "video_features_LineAngle",
+    "tags": [
+      "video",
+      "features",
+      "LineAngle"
+    ],
+    "version": "local-version",
+    "basename": "LineAngle.js",
+    "displayName": "LineAngle",
+    "basedir": "video/features",
+    "filePath": "video/features/LineAngle.shape",
+    "image": "video/features/LineAngle.png"
+  },
+  {
+    "name": "video_features_Object",
+    "tags": [
+      "video",
+      "features",
+      "Object"
+    ],
+    "version": "local-version",
+    "basename": "Object.js",
+    "displayName": "Object",
+    "basedir": "video/features",
+    "filePath": "video/features/Object.shape",
+    "image": "video/features/Object.png"
+  },
+  {
+    "name": "video_features_Scanner",
+    "tags": [
+      "video",
+      "features",
+      "Scanner"
+    ],
+    "version": "local-version",
+    "basename": "Scanner.js",
+    "displayName": "Scanner",
+    "basedir": "video/features",
+    "filePath": "video/features/Scanner.shape",
+    "image": "video/features/Scanner.png"
+  },
+  {
+    "name": "video_filter_Emboss",
+    "tags": [
+      "video",
+      "filter",
+      "Emboss"
+    ],
+    "version": "local-version",
+    "basename": "Emboss.js",
+    "displayName": "Emboss",
+    "basedir": "video/filter",
+    "filePath": "video/filter/Emboss.shape",
+    "image": "video/filter/Emboss.png"
+  },
+  {
+    "name": "video_filter_Prewitt",
+    "tags": [
+      "video",
+      "filter",
+      "Prewitt"
+    ],
+    "version": "local-version",
+    "basename": "Prewitt.js",
+    "displayName": "Prewitt",
+    "basedir": "video/filter",
+    "filePath": "video/filter/Prewitt.shape",
+    "image": "video/filter/Prewitt.png"
+  },
+  {
+    "name": "video_filter_PrewittInvers",
+    "tags": [
+      "video",
+      "filter",
+      "PrewittInvers"
+    ],
+    "version": "local-version",
+    "basename": "PrewittInvers.js",
+    "displayName": "PrewittInvers",
+    "basedir": "video/filter",
+    "filePath": "video/filter/PrewittInvers.shape",
+    "image": "video/filter/PrewittInvers.png"
+  },
+  {
+    "name": "video_filter_Roberts",
+    "tags": [
+      "video",
+      "filter",
+      "Roberts"
+    ],
+    "version": "local-version",
+    "basename": "Roberts.js",
+    "displayName": "Roberts",
+    "basedir": "video/filter",
+    "filePath": "video/filter/Roberts.shape",
+    "image": "video/filter/Roberts.png"
+  },
+  {
+    "name": "video_filter_RobertsInvers",
+    "tags": [
+      "video",
+      "filter",
+      "RobertsInvers"
+    ],
+    "version": "local-version",
+    "basename": "RobertsInvers.js",
+    "displayName": "RobertsInvers",
+    "basedir": "video/filter",
+    "filePath": "video/filter/RobertsInvers.shape",
+    "image": "video/filter/RobertsInvers.png"
+  },
+  {
+    "name": "video_filter_Sobel",
+    "tags": [
+      "video",
+      "filter",
+      "Sobel"
+    ],
+    "version": "local-version",
+    "basename": "Sobel.js",
+    "displayName": "Sobel",
+    "basedir": "video/filter",
+    "filePath": "video/filter/Sobel.shape",
+    "image": "video/filter/Sobel.png"
+  },
+  {
+    "name": "video_filter_SobelInvers",
+    "tags": [
+      "video",
+      "filter",
+      "SobelInvers"
+    ],
+    "version": "local-version",
+    "basename": "SobelInvers.js",
+    "displayName": "SobelInvers",
+    "basedir": "video/filter",
+    "filePath": "video/filter/SobelInvers.shape",
+    "image": "video/filter/SobelInvers.png"
+  },
+  {
+    "name": "video_geometry_FlipHorizontal",
+    "tags": [
+      "video",
+      "geometry",
+      "FlipHorizontal"
+    ],
+    "version": "local-version",
+    "basename": "FlipHorizontal.js",
+    "displayName": "FlipHorizontal",
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/FlipHorizontal.shape",
+    "image": "video/geometry/FlipHorizontal.png"
+  },
+  {
+    "name": "video_geometry_FlipVertical",
+    "tags": [
+      "video",
+      "geometry",
+      "FlipVertical"
+    ],
+    "version": "local-version",
+    "basename": "FlipVertical.js",
+    "displayName": "FlipVertical",
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/FlipVertical.shape",
+    "image": "video/geometry/FlipVertical.png"
+  },
+  {
+    "name": "video_geometry_Scale",
+    "tags": [
+      "video",
+      "geometry",
+      "Scale"
+    ],
+    "version": "local-version",
+    "basename": "Scale.js",
+    "displayName": "Scale",
+    "basedir": "video/geometry",
+    "filePath": "video/geometry/Scale.shape",
+    "image": "video/geometry/Scale.png"
+  },
+  {
+    "name": "video_morphological_Dilate",
+    "tags": [
+      "video",
+      "morphological",
+      "Dilate"
+    ],
+    "version": "local-version",
+    "basename": "Dilate.js",
+    "displayName": "Dilate",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Dilate.shape",
+    "image": "video/morphological/Dilate.png"
+  },
+  {
+    "name": "video_morphological_Erode",
+    "tags": [
+      "video",
+      "morphological",
+      "Erode"
+    ],
+    "version": "local-version",
+    "basename": "Erode.js",
+    "displayName": "Erode",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Erode.shape",
+    "image": "video/morphological/Erode.png"
+  },
+  {
+    "name": "video_morphological_Thinning",
+    "tags": [
+      "video",
+      "morphological",
+      "Thinning"
+    ],
+    "version": "local-version",
+    "basename": "Thinning.js",
+    "displayName": "Thinning",
+    "basedir": "video/morphological",
+    "filePath": "video/morphological/Thinning.shape",
+    "image": "video/morphological/Thinning.png"
+  },
+  {
+    "name": "video_quality_Blur",
+    "tags": [
+      "video",
+      "quality",
+      "Blur"
+    ],
+    "version": "local-version",
+    "basename": "Blur.js",
+    "displayName": "Blur",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Blur.shape",
+    "image": "video/quality/Blur.png"
+  },
+  {
+    "name": "video_quality_Brighter",
+    "tags": [
+      "video",
+      "quality",
+      "Brighter"
+    ],
+    "version": "local-version",
+    "basename": "Brighter.js",
+    "displayName": "Brighter",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Brighter.shape",
+    "image": "video/quality/Brighter.png"
+  },
+  {
+    "name": "video_quality_Contrast",
+    "tags": [
+      "video",
+      "quality",
+      "Contrast"
+    ],
+    "version": "local-version",
+    "basename": "Contrast.js",
+    "displayName": "Contrast",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Contrast.shape",
+    "image": "video/quality/Contrast.png"
+  },
+  {
+    "name": "video_quality_Darker",
+    "tags": [
+      "video",
+      "quality",
+      "Darker"
+    ],
+    "version": "local-version",
+    "basename": "Darker.js",
+    "displayName": "Darker",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Darker.shape",
+    "image": "video/quality/Darker.png"
+  },
+  {
+    "name": "video_quality_GaussBlur",
+    "tags": [
+      "video",
+      "quality",
+      "GaussBlur"
+    ],
+    "version": "local-version",
+    "basename": "GaussBlur.js",
+    "displayName": "GaussBlur",
+    "basedir": "video/quality",
+    "filePath": "video/quality/GaussBlur.shape",
+    "image": "video/quality/GaussBlur.png"
+  },
+  {
+    "name": "video_quality_HistogramAdjust",
+    "tags": [
+      "video",
+      "quality",
+      "HistogramAdjust"
+    ],
+    "version": "local-version",
+    "basename": "HistogramAdjust.js",
+    "displayName": "HistogramAdjust",
+    "basedir": "video/quality",
+    "filePath": "video/quality/HistogramAdjust.shape",
+    "image": "video/quality/HistogramAdjust.png"
+  },
+  {
+    "name": "video_quality_Sharpen",
+    "tags": [
+      "video",
+      "quality",
+      "Sharpen"
+    ],
+    "version": "local-version",
+    "basename": "Sharpen.js",
+    "displayName": "Sharpen",
+    "basedir": "video/quality",
+    "filePath": "video/quality/Sharpen.shape",
+    "image": "video/quality/Sharpen.png"
+  },
+  {
+    "name": "video_source_IPCamera",
+    "tags": [
+      "video",
+      "source",
+      "IPCamera"
+    ],
+    "version": "local-version",
+    "basename": "IPCamera.js",
+    "displayName": "IPCamera",
+    "basedir": "video/source",
+    "filePath": "video/source/IPCamera.shape",
+    "image": "video/source/IPCamera.png"
+  },
+  {
+    "name": "video_source_WebCam",
+    "tags": [
+      "video",
+      "source",
+      "WebCam"
+    ],
+    "version": "local-version",
+    "basename": "WebCam.js",
+    "displayName": "WebCam",
+    "basedir": "video/source",
+    "filePath": "video/source/WebCam.shape",
+    "image": "video/source/WebCam.png"
+  },
+  {
+    "name": "video_tools_Histogram",
+    "tags": [
+      "video",
+      "tools",
+      "Histogram"
+    ],
+    "version": "local-version",
+    "basename": "Histogram.js",
+    "displayName": "Histogram",
+    "basedir": "video/tools",
+    "filePath": "video/tools/Histogram.shape",
+    "image": "video/tools/Histogram.png"
+  },
+  {
+    "name": "video_tools_Preview",
+    "tags": [
+      "video",
+      "tools",
+      "Preview"
+    ],
+    "version": "local-version",
+    "basename": "Preview.js",
+    "displayName": "Preview",
+    "basedir": "video/tools",
+    "filePath": "video/tools/Preview.shape",
+    "image": "video/tools/Preview.png"
+  },
+  {
+    "name": "video_tools_VideoSelector",
+    "tags": [
+      "video",
+      "tools",
+      "VideoSelector"
+    ],
+    "version": "local-version",
+    "basename": "VideoSelector.js",
+    "displayName": "VideoSelector",
+    "basedir": "video/tools",
+    "filePath": "video/tools/VideoSelector.shape",
+    "image": "video/tools/VideoSelector.png"
+  },
+  {
+    "name": "widget_HighLow",
+    "tags": [
+      "widget",
+      "HighLow"
+    ],
+    "version": "local-version",
+    "basename": "HighLow.js",
+    "displayName": "HighLow",
+    "basedir": "widget",
+    "filePath": "widget/HighLow.shape",
+    "image": "widget/HighLow.png"
+  },
+  {
+    "name": "widget_PushButton",
+    "tags": [
+      "widget",
+      "PushButton"
+    ],
+    "version": "local-version",
+    "basename": "PushButton.js",
+    "displayName": "PushButton",
+    "basedir": "widget",
+    "filePath": "widget/PushButton.shape",
+    "image": "widget/PushButton.png"
+  },
+  {
+    "name": "widget_Slider",
+    "tags": [
+      "widget",
+      "Slider"
+    ],
+    "version": "local-version",
+    "basename": "Slider.js",
+    "displayName": "Slider",
+    "basedir": "widget",
+    "filePath": "widget/Slider.shape",
+    "image": "widget/Slider.png"
+  },
+  {
+    "name": "widget_Sparkline",
+    "tags": [
+      "widget",
+      "Sparkline"
+    ],
+    "version": "local-version",
+    "basename": "Sparkline.js",
+    "displayName": "Sparkline",
+    "basedir": "widget",
+    "filePath": "widget/Sparkline.shape",
+    "image": "widget/Sparkline.png"
+  }
+]

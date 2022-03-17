@@ -1,0 +1,147 @@
+{
+  "draw2d": [
+    {
+      "type": "shape_designer.figure.PolyRect",
+      "id": "d937ec12-7bfe-0617-565c-447e72f00431",
+      "x": 7951.5,
+      "y": 7981.5,
+      "width": 97,
+      "height": 37,
+      "alpha": 1,
+      "selectable": true,
+      "draggable": true,
+      "angle": 0,
+      "userData": {
+        "baseClass": "draw2d.SetFigure",
+        "code": "/**\n * by 'Draw2D Shape Designer'\n *\n * Custom JS code to tweak the standard behaviour of the generated\n * shape. add your custome code and event handler here.\n *\n *\n */\ntestShape = testShape.extend({\n\n    init: function(attr, setter, getter){\n         this._super(attr, setter, getter);\n\n        this.attr({\n            resizeable:false,\n            \"userData.elementId\":this.id\n        });\n         this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());\n         \n         this.value = 0;\n         var _this = this;\n         this.callback = function( msg){\n             if(msg.elementId !== _this.attr(\"userData.elementId\")){\n                return;\n             }\n             _this.value = msg.value;\n             _this.getOutputPort(0).setValue(_this.value);\n            if(_this.value === 1){\n                _this.layerAttr(\"circle\",{fill:\"#C21B7A\"});\n            }\n            else{\n                _this.layerAttr(\"circle\",{fill:\"#f0f0f0\"});\n            }\n         }\n    },\n    \n    calculate: function(context)\n    {\n    },\n    \n    onStart: function(context)\n    {\n        socket.on(\"mqtt:message\", this.callback);\n        this.callback({value:this.value})\n    },\n\n    onStop:function(context)\n    {\n        socket.off(\"mqtt:message\", this.callback);\n    },\n\n    getParameterSettings: function()\n    {\n        return [\n        {\n            name:\"elementId\",\n            label:\"Element Id\",\n            property:{\n                type: \"string\"\n        }\n        \n        }];\n    }\n    \n});",
+        "name": "circle",
+        "markdown": "# MQTT Message Receiver\n\nThis element can receive public message sent from [HiveMQ](http://www.hivemq.com/demos/websocket-client/).\nHiveMQ is a public available MQTT server. Do not use them for productive or private\nmessage. All messages are public and can be subscribed by anyone and anyone can\nsend you a message.\n\n## Connect\nGo to the [HiveMQ](http://www.hivemq.com/demos/websocket-client/) web socket client and press the `connect` button.\n\n## Topic\nThe topic is a kind of `channel` in MQTT. For this element the topic is always \n`freegroup/brainbox`\n\n## Message\nThe element checks if the message.elementId is related to the element.elementId.\nIf yes take the value and send them to the output port.\n\nSet the `value` to `1` if you want the the output port goes high.\n\n```\n{\n \"value\":0,\n \"elementId\":\"yourElementId\"\n}\n```",
+        "type": "Output",
+        "direction": 1
+      },
+      "cssClass": "shape_designer_figure_PolyRect",
+      "ports": [],
+      "bgColor": "rgba(145,145,145,1)",
+      "color": "rgba(48,48,48,1)",
+      "stroke": 1,
+      "radius": 5,
+      "dasharray": null,
+      "vertices": [
+        {
+          "x": 8048.5,
+          "y": 8018.5
+        },
+        {
+          "x": 7951.5,
+          "y": 8018.5
+        },
+        {
+          "x": 7951.5,
+          "y": 7981.5
+        },
+        {
+          "x": 8048.5,
+          "y": 7981.5
+        }
+      ],
+      "blur": 0,
+      "filters": [
+        {
+          "name": "shape_designer.filter.PositionFilter"
+        },
+        {
+          "name": "shape_designer.filter.SizeFilter"
+        },
+        {
+          "name": "shape_designer.filter.StrokeFilter"
+        },
+        {
+          "name": "shape_designer.filter.FillColorFilter"
+        },
+        {
+          "name": "shape_designer.filter.RadiusFilter"
+        }
+      ]
+    },
+    {
+      "type": "shape_designer.figure.ExtPort",
+      "id": "f4d5683a-7c42-8771-5df4-e4e9da5b8b46",
+      "x": 8041.3852480000005,
+      "y": 7995.5,
+      "width": 10,
+      "height": 10,
+      "alpha": 1,
+      "selectable": true,
+      "draggable": true,
+      "angle": 0,
+      "userData": {
+        "name": "Port",
+        "type": "Output",
+        "direction": 1
+      },
+      "cssClass": "shape_designer_figure_ExtPort",
+      "ports": [],
+      "bgColor": "rgba(55,177,222,1)",
+      "color": "rgba(27,27,27,1)",
+      "stroke": 1,
+      "dasharray": null,
+      "filters": [
+        {
+          "name": "shape_designer.filter.PositionFilter"
+        },
+        {
+          "name": "shape_designer.filter.FanoutFilter"
+        },
+        {
+          "name": "shape_designer.filter.PortDirectionFilter"
+        },
+        {
+          "name": "shape_designer.filter.PortTypeFilter"
+        },
+        {
+          "name": "shape_designer.filter.FillColorFilter"
+        }
+      ]
+    },
+    {
+      "type": "shape_designer.figure.ExtLabel",
+      "id": "dda95266-c917-46e8-cc39-f538d0d43f73",
+      "x": 7966.109375,
+      "y": 7986,
+      "width": 44.125,
+      "height": 21,
+      "alpha": 1,
+      "selectable": true,
+      "draggable": true,
+      "angle": 0,
+      "userData": {
+        "name": "Label"
+      },
+      "cssClass": "shape_designer_figure_ExtLabel",
+      "ports": [],
+      "bgColor": "rgba(0,0,0,0)",
+      "color": "rgba(27,27,27,1)",
+      "stroke": 0,
+      "radius": 0,
+      "dasharray": null,
+      "text": "HiveMQ",
+      "outlineStroke": 0,
+      "outlineColor": "rgba(0,0,0,0)",
+      "fontSize": 16,
+      "fontColor": "rgba(255,248,36,1)",
+      "fontFamily": null,
+      "editor": "LabelInplaceEditor",
+      "filters": [
+        {
+          "name": "shape_designer.filter.PositionFilter"
+        },
+        {
+          "name": "shape_designer.filter.FontSizeFilter"
+        },
+        {
+          "name": "shape_designer.filter.FontColorFilter"
+        }
+      ]
+    }
+  ]
+}

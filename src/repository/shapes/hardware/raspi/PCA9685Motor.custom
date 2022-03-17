@@ -1,0 +1,141 @@
+/**
+ * Generated Code for the Draw2D touch HTML5 lib.
+ * File will be generated if you save the *.shape file.
+ *
+ * by 'Draw2D Shape Designer'
+ *
+ * Custom JS code to tweak the standard behaviour of the generated
+ * shape. add your custom code and event handler here.
+ *
+ * Looks disconcerting - extending my own class. But this is a good method to
+ * merge basic code and override them with custom methods.
+ */
+hardware_raspi_PCA9685Motor = hardware_raspi_PCA9685Motor.extend({
+
+    init: function(attr, setter, getter){
+         this._super(attr, setter, getter);
+
+        this.channel = "0"
+        this.on("change:userData.channel",(emitter, event)=>{
+            this.layerAttr("channelLabel", {text: "PWM channel "+event.value})
+            this.channel = event.value;
+        });
+        this.on("added",(emitter, event)=>{
+             this.layerAttr("channelLabel", {text:  "PWM channel "+this.attr("userData.channel")})
+        });
+        this.attr("userData.channel",this.channel)
+        
+        this.attr({
+            resizeable:false
+        });
+        this.installEditPolicy(new draw2d.policy.figure.AntSelectionFeedbackPolicy());
+    },
+
+    /**
+     *  Called by the simulator for every calculation
+     *  loop
+     *  @param {Object} context context where objects can store or handover global variables to other objects.
+     *  @required
+     **/
+    calculate:function( context)
+    {
+        let port_pwm   = this.getInputPort("input_channel_pwm");
+        let port_onoff = this.getInputPort("input_channel_onoff");
+        if(port_pwm.hasChangedValue() || port_onoff.hasChangedValue()){
+            let pwm  = port_pwm.getValue();
+            let onoff = port_onoff.getValue();
+            if(onoff){
+                hardware.pca9685.set(parseInt(this.channel), onoff);
+                hardware.pca9685.pwm(parseInt(this.channel), pwm);
+            }
+            else{
+                hardware.pca9685.set(parseInt(this.channel), onoff);
+            }
+        }
+    },
+
+
+    /**
+     *  Called if the simulation mode is starting
+     *  @required
+     **/
+    onStart:function( context )
+    {
+        let port_pwm   = this.getInputPort("input_channel_pwm");
+        let port_onoff = this.getInputPort("input_channel_onoff");
+
+        let pwm  = port_pwm.getValue();
+        let onoff = port_onoff.getValue();
+        if(onoff){
+            hardware.pca9685.set(parseInt(this.channel), onoff);
+            hardware.pca9685.pwm(parseInt(this.channel), pwm);
+        }
+        else{
+            hardware.pca9685.set(parseInt(this.channel), onoff);
+        }
+    },
+
+    /**
+     *  Called if the simulation mode is stopping
+     *  @required
+     **/
+    onStop:function( context )
+    {
+        // be save - switch off the channel.
+        hardware.pca9685.set(parseInt(this.channel), 0);
+    },
+
+    /**
+     * Get the simulator a hint which kind of hardware the shapes requires or supports
+     * This helps the simulator to bring up some dialogs and messages if any new hardware is connected/get lost
+     * and your are running a circuit which needs this kind of hardware...
+     **/
+    getRequiredHardware: function(){
+      return {
+        raspi: false,
+        arduino: false,
+        pca9685: true
+      };
+    },
+    
+        
+        
+    setPersistentAttributes: function (memento) 
+    {
+        this._super(memento);
+
+        this.channel = this.attr("userData.channel");
+    },
+    
+    
+    getParameterSettings: function () {
+        return [
+            {
+                name: "channel",
+                label: "The PCA9685 Channel to use",
+                property: {
+                    type: "enum",
+                    values: [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15"
+                    ]
+                }
+            }];
+    }
+
+
+});
