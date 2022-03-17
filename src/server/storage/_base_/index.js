@@ -59,6 +59,7 @@ module.exports = {
     }
 
     if (!fs.existsSync(file)) {
+      console.log("not found", file)
       res.status(404).send('Not found')
       return
     }
@@ -68,6 +69,8 @@ module.exports = {
       res.setHeader('Content-Type', 'application/json')
       readStream.pipe(res)
     } catch (exc) {
+      console.log("Error reading", file)
+      console.log(exc)
       res.status(404).send('Not found')
     }
   },
