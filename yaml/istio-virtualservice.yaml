@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: backend
+  namespace: default
+spec:
+  hosts: ["app.<DOMAIN>"]
+  gateways: [ "gateway-app" ]
+  http:
+    - match:
+      - uri:
+          prefix: "/api"
+      rewrite:
+        uri: "/api"
+      route:
+        - destination:
+            host: backend

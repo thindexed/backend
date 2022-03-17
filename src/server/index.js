@@ -35,11 +35,6 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
 
-// Determine the IP-Address to use for the http server
-//
-const address = require("./util/network")
-
-
 runServer()
 
 // =======================================================================
@@ -58,8 +53,7 @@ async function  runServer() {
 
   http.listen(program.port, function () {
     console.log('| System is up and running. Copy the URL below and open this               |');
-    console.log('| in your browser: http://' + address + ':' + program.port + '/               ');
-    console.log('|                  http://localhost:' + program.port + '/                    ');
+    console.log('| in your browser: http://localhost:' + program.port + '/                    ');
     console.log("============================================================================")
   });
 }
