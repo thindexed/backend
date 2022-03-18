@@ -374,7 +374,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signal_SignalTarget",
+                "type": "signal_SignalTarget",
                 "id": "10be29c7-e183-247b-7db5-c5dac45e30a8",
                 "x": 2855,
                 "y": 2860,
@@ -388,7 +388,7 @@
                   "file": "signals/SignalTarget.shape",
                   "signalId": "Bit 0"
                 },
-                "cssClass": "circuit_digital_signal_SignalTarget",
+                "cssClass": "signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -397,7 +397,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signal_SignalTarget",
+                "type": "signal_SignalTarget",
                 "id": "847de79c-1a8f-a3b7-2220-15dab7e45bf6",
                 "x": 3025.984375,
                 "y": 2860,
@@ -411,7 +411,7 @@
                   "file": "signals/SignalTarget.shape",
                   "signalId": "Bit 1"
                 },
-                "cssClass": "circuit_digital_signal_SignalTarget",
+                "cssClass": "signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -420,7 +420,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signal_SignalTarget",
+                "type": "signal_SignalTarget",
                 "id": "1471be0a-32d1-423f-b51c-28c60e0f7708",
                 "x": 3201,
                 "y": 2860,
@@ -434,7 +434,7 @@
                   "file": "signals/SignalTarget.shape",
                   "signalId": "Bit 2"
                 },
-                "cssClass": "circuit_digital_signal_SignalTarget",
+                "cssClass": "signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
@@ -443,7 +443,7 @@
                 "labels": []
               },
               {
-                "type": "circuit_digital_signal_SignalTarget",
+                "type": "signal_SignalTarget",
                 "id": "2c577ec5-aeb8-d71d-f8c6-9671f6698ed3",
                 "x": 3424.8125,
                 "y": 2860,
@@ -457,7 +457,7 @@
                   "file": "signals/SignalTarget.shape",
                   "signalId": "Bit 3"
                 },
-                "cssClass": "circuit_digital_signal_SignalTarget",
+                "cssClass": "signal_SignalTarget",
                 "bgColor": "rgba(0,0,0,0)",
                 "color": "rgba(27,27,27,1)",
                 "stroke": 0,
