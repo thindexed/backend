@@ -23,10 +23,6 @@ let restGroup = require("./rest-group")
 let restAssignment = require("./rest-assignment")
 let restRegistration = require("./rest-registration")
 
-let permissionsAnonym = require("./permissions-anonym")
-let permissionsUser = require("./permissions-user")
-let permissionsAdmin = require("./permissions-admin")
-
 let brainsHomeDir = null
 let sheetsHomeDir = null
 let brainsSharedDir = null
