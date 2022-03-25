@@ -21,16 +21,6 @@ function mapUser(user) {
 exports.init = (app, args)=>{
 }
 
-// each backend storage with authentication MUST have an "userinfo" endpoint
-//
-exports.userinfo = (req, res) => {
-  if (!req.isAuthenticated || !req.isAuthenticated()) {
-    res.status(403).send("user not logged in")
-  } else {
-    res.send(mapUser(req.user))
-  }
-}
-
 exports.list = (req, res) => {
   classroom.users.all()
     .then( users => {

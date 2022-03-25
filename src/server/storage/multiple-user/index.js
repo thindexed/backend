@@ -204,21 +204,6 @@ module.exports = {
     console.log("|    Author: " + sheetsHomeDir)
 
 
-    // the UI ask for the permissions of the related user to setup the UI in good fashion.
-    // This is just for the UI part. the backend protects the endpoints as well.
-    //
-    app.get('/permissions', (req, res) => {
-      if (!req.isAuthenticated || !req.isAuthenticated()) {
-        res.send(permissionsAnonym)
-      } else {
-        if (req.user.role === "admin") {
-          res.send(permissionsAdmin)
-        } else {
-          res.send(permissionsUser)
-        }
-      }
-    })
-
     // Rest API for Password handling
     //
     // only an admin can create a "reset password" request right now
@@ -230,13 +215,6 @@ module.exports = {
     // endpoint to set the password. requires a valid token and the new password
     app.post("/password",                                     restPassword.set)
 
-
-    // Self Registration
-    //
-    app.use ('/register', express.static(__dirname + '/../../../frontend/register'));
-    app.get ('/api/register/validate/:name', restRegistration.validate)
-    app.post('/api/register/',               restRegistration.post)
-
     // User Management API
     //
     app.use   ('/user',               ensureAdminLoggedIn(), express.static(__dirname + '/../../../frontend/user'));
@@ -245,7 +223,6 @@ module.exports = {
     app.delete('/api/admin/user/:id', ensureAdminLoggedIn(), restUser.del)
     app.put   ('/api/admin/user/:id', ensureAdminLoggedIn(), restUser.put)
     app.post  ('/api/admin/user',     ensureAdminLoggedIn(), restUser.post)
-    app.get   ('/userinfo',                                  restUser.userinfo)
 
     // Group Management API
     // User can create groups and invite people to these groups
@@ -265,11 +242,7 @@ module.exports = {
 
     // Serve the static content for the different modules of brainbox
     //
-    app.use('/_common',  express.static(__dirname + '/../../../frontend/_common'));
     app.use('/designer', express.static(__dirname + '/../../../frontend/designer'));
-    app.use('/circuit',  express.static(__dirname + '/../../../frontend/circuit'));
-    app.use('/author',   express.static(__dirname + '/../../../frontend/author'));
-    app.use('/home',     express.static(__dirname + '/../../../frontend/home'));
 
     // =================================================================
     // endpoints for shared circuits / sheets
