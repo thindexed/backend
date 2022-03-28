@@ -18,10 +18,8 @@ let {token_set, token_get} = require("./token-user")
 const {trim} = require("../../util/string")
 
 let restUser = require("./rest-user")
-let restPassword = require("./rest-password")
 let restGroup = require("./rest-group")
 let restAssignment = require("./rest-assignment")
-let restRegistration = require("./rest-registration")
 
 let brainsHomeDir = null
 let sheetsHomeDir = null
@@ -152,10 +150,8 @@ module.exports = {
 
     classroom.init(app, args)
     restUser.init(app, args)
-    restPassword.init(app, args)
     restGroup.init(app, args)
     restAssignment.init(app, args, sheetsSharedDir, brainsSharedDir)
-    restRegistration.init(app, args)
 
     // add & configure middleware
     app.use(Session({
@@ -173,22 +169,6 @@ module.exports = {
     app.use(passport.initialize())
     app.use(passport.session())
 
-    // inject the authentication endpoints.
-    //
-    app.post('/login', passport.authenticate('local', {failureRedirect: '/login'}), this.onLoggedIn)
-    app.use('/login', (req, res, next) => {
-      if (req.query.returnTo) {
-        req.session.returnTo = req.query.returnTo
-      }
-      next()
-    }, express.static(__dirname + '/../../../frontend/login'))
-
-    app.get('/logout', (req, res) => {
-      req.logout();
-      res.redirect(req.query.returnTo ? `../${req.query.returnTo}/` : '/')
-    })
-
-
     console.log("| You are using the " + "'multiple-user'".bold.green + " file storage engine.                   |")
     console.log("| This kind of storage is perfect for small or medium user groups.         |")
     console.log("| It contains a simple user management and a basic login page.             |")
@@ -199,17 +179,6 @@ module.exports = {
     console.log("|    Simulator: " + brainsHomeDir)
     console.log("|    Author: " + sheetsHomeDir)
 
-
-    // Rest API for Password handling
-    //
-    // only an admin can create a "reset password" request right now
-    // endpoint to generate a password reset token
-    app.use ("/password",       express.static(__dirname + '/../../../frontend/resetpwd'))
-    app.post("/password/token",        ensureAdminLoggedIn(), restPassword.token_post)
-    // endpoint to check if the token is valid
-    app.get ("/password/token/:token",                        restPassword.token_get)
-    // endpoint to set the password. requires a valid token and the new password
-    app.post("/password",                                     restPassword.set)
 
     // User Management API
     //
@@ -350,13 +319,6 @@ module.exports = {
   deleteFile: generic.deleteFile,
   writeFile: generic.writeFile,
   createFolder: generic.createFolder,
-
-  onLoggedIn(req, res) {
-    let returnTo = req.session.returnTo ? `../${trim(req.session.returnTo,'/')}/` : '/'
-    res.redirect(returnTo)
-    makeDir(sheetsHomeDir + req.user.username)
-    makeDir(brainsHomeDir + req.user.username)
-  },
 
   writeShape: function (baseDir, subDir, content, reason, res) {
     const io = require('../../comm/websocket').io

@@ -16,3 +16,6 @@ spec:
       containers:
       - name: backend
         image: <image-name>
+        envFrom:
+        - secretRef:
+            name: github-secrets

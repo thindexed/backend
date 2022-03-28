@@ -8,9 +8,6 @@ const { program } = require('commander')
 const bodyParser = require('body-parser')
 const colors = require('colors')
 const io = require('./comm/websocket').connect(http, {path: '/socket.io'})
-const mqtt = require('./comm/hive-mqtt').connect(io, "freegroup/brainbox")
-const ip_camera = require("./comm/ip-camera").connect(io)
-
 
 
 program
