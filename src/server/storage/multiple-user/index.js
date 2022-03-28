@@ -84,6 +84,7 @@ function ensureLoggedIn(options) {
   let url = options.redirectTo || '/login'
   let setReturnTo = (options.setReturnTo === undefined) ? true : options.setReturnTo
   return function (req, res, next) {
+    console.log(JSON.stringify(req.headers, undefined, 2));
     // token is required for server side rendering with
     // puppeteer
     let token = req.query.token
@@ -115,6 +116,7 @@ function ensureAdminLoggedIn(options) {
   let url = options.redirectTo || '/login'
   let setReturnTo = (options.setReturnTo === undefined) ? true : options.setReturnTo
   return function (req, res, next) {
+    console.log(JSON.stringify(req.headers, undefined, 2));
     if (!req.isAuthenticated || !req.isAuthenticated() || req.user.role !== "admin") {
       if (setReturnTo && req.session) {
         req.session.returnTo = req.originalUrl || req.url
