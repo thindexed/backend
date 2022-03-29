@@ -1,23 +1,16 @@
-const colors = require('colors')
 const path = require('path')
-const express = require('express')
 const makeDir = require('make-dir')
-const uuid = require('uuid/v4')
 const shortid = require('../../util/shortid')
 const passport = require('passport')
 const Strategy = require('passport-local').Strategy
-const Session = require('express-session')
-const FileStore = require('session-file-store')(Session)
 const bcrypt = require("bcrypt")
 const sanitize = require("../../util/sanitize-filepath")
 const generic = require("../_base_")
-const update = require("../../update")
-const {thumbnail, generateShapeIndex} = require("../../converter/thumbnail")
+const {generateShapeIndex} = require("../../converter/thumbnail")
 const classroom = require('./../../classroom')
 let {token_set, token_get} = require("./token-user")
-const {trim} = require("../../util/string")
 
-let restUser = require("./rest-user")
+
 let restGroup = require("./rest-group")
 let restAssignment = require("./rest-assignment")
 
@@ -49,79 +42,29 @@ passport.use(new Strategy(
       })
   }))
 
-// Configure Passport authenticated session persistence.
-//
-// In order to restore authentication state across HTTP requests, Passport needs
-// to serialize users into and deserialize users out of the session.  The
-// typical implementation of this is as simple as supplying the user ID when
-// serializing, and querying the user record by ID from the database when
-// deserializing.
-passport.serializeUser(function (user, cb) {
-  cb(null, user.id)
-});
-
-passport.deserializeUser(function (id, cb) {
-  classroom.users.get(id)
-    .then( user => {
-      cb(null, user)
-    })
-    .catch( error => {
-      cb(null, false)
-    })
-})
 
 // convertToUserBaseFolder
 function userFolder(baseFolder, req) {
   return baseFolder + req.user.username + path.sep
 }
 
-
 function ensureLoggedIn(options) {
-  if (typeof options == 'string') {
-    options = {redirectTo: options}
-  }
-  options = options || {}
-  let url = options.redirectTo || '/login'
-  let setReturnTo = (options.setReturnTo === undefined) ? true : options.setReturnTo
   return function (req, res, next) {
-    console.log(JSON.stringify(req.headers, undefined, 2));
-    // token is required for server side rendering with
-    // puppeteer
-    let token = req.query.token
-    if (token) {
-      let user = token_get(token)
-      if (!req.user) {
-        req.user = user
-      }
-    }
-
-    if (!req.isAuthenticated || !req.isAuthenticated()) {
-      /*
-      if (setReturnTo && req.session) {
-        req.session.returnTo = req.originalUrl || req.url
-      }
-      return res.redirect(url)
-      */
-     req.user = {id: "1", username: 'admin', password: 'secret', displayName: 'Admin', role: "admin", email: 'admin@example.com'}
+    let role = req.get("x-role")
+    if ( role !== "admin" || role !== "user") {
+      res.send(401, 'string')
+      return
     }
     next()
   }
 }
 
 function ensureAdminLoggedIn(options) {
-  if (typeof options == 'string') {
-    options = {redirectTo: options}
-  }
-  options = options || {}
-  let url = options.redirectTo || '/login'
-  let setReturnTo = (options.setReturnTo === undefined) ? true : options.setReturnTo
   return function (req, res, next) {
-    console.log(JSON.stringify(req.headers, undefined, 2));
-    if (!req.isAuthenticated || !req.isAuthenticated() || req.user.role !== "admin") {
-      if (setReturnTo && req.session) {
-        req.session.returnTo = req.originalUrl || req.url
-      }
-      return res.redirect(url)
+    let role = req.get("x-role")
+    if ( role !== "admin") {
+      res.send(401, 'string')
+      return
     }
     next();
   }
@@ -151,25 +94,12 @@ module.exports = {
     makeDir(brainsHomeDir)
 
     classroom.init(app, args)
-    restUser.init(app, args)
     restGroup.init(app, args)
     restAssignment.init(app, args, sheetsSharedDir, brainsSharedDir)
 
-    // add & configure middleware
-    app.use(Session({
-      genid: () => uuid(),
-      store: new FileStore(),
-      secret: 'ASDFQ"§$%$E&%RTZHFGDSAW$%/&EUTZDJFGH',
-      resave: false,
-      saveUninitialized: true
-    }))
-
-
     // Initialize Passport and restore authentication state, if any, from the
     // session.
-    app.use(require('express-session')({secret: 'keyboard cat', resave: false, saveUninitialized: false}));
     app.use(passport.initialize())
-    app.use(passport.session())
 
     console.log("| You are using the " + "'multiple-user'".bold.green + " file storage engine.                   |")
     console.log("| This kind of storage is perfect for small or medium user groups.         |")
@@ -181,20 +111,9 @@ module.exports = {
     console.log("|    Simulator: " + brainsHomeDir)
     console.log("|    Author: " + sheetsHomeDir)
 
-
-    // User Management API
-    //
-    app.use   ('/user',               ensureAdminLoggedIn(), express.static(__dirname + '/../../../frontend/user'));
-    app.get   ('/api/admin/user',     ensureAdminLoggedIn(), restUser.list)
-    app.get   ('/api/admin/user/:id', ensureAdminLoggedIn(), restUser.get)
-    app.delete('/api/admin/user/:id', ensureAdminLoggedIn(), restUser.del)
-    app.put   ('/api/admin/user/:id', ensureAdminLoggedIn(), restUser.put)
-    app.post  ('/api/admin/user',     ensureAdminLoggedIn(), restUser.post)
-
     // Group Management API
     // User can create groups and invite people to these groups
     //
-    app.use   ('/groups',                  ensureLoggedIn(), express.static(__dirname + '/../../../frontend/groups'));
     app.get   ('/api/user/group',          ensureLoggedIn(), restGroup.list)
     app.get   ('/api/user/group/:id',      ensureLoggedIn(), restGroup.get)
     app.delete('/api/user/group/:id',      ensureLoggedIn(), restGroup.del)
@@ -206,10 +125,6 @@ module.exports = {
     app.post  ('/api/user/group/:groupId/assignment',     ensureLoggedIn(), restAssignment.post)
     app.delete('/api/user/group/:groupId/assignment/:id', ensureLoggedIn(), restAssignment.del)
 
-
-    // Serve the static content for the different modules of brainbox
-    //
-    app.use('/designer', express.static(__dirname + '/../../../frontend/designer'));
 
     // =================================================================
     // endpoints for shared circuits / sheets
@@ -290,7 +205,6 @@ module.exports = {
     // Handle system shape files
     //
     // =================================================================
-    app.use('/shapes/global', express.static(shapesAppDir));
     app.get('/api/global/shape/list', (req, res) => module.exports.listFiles(shapesAppDir, req.query.path, res))
     app.get('/api/global/shape/get', (req, res) => module.exports.getJSONFile(shapesAppDir, req.query.filePath, res))
     app.get('/api/global/shape/image', (req, res) => module.exports.getBase64Image(shapesAppDir, req.query.filePath, res))
@@ -303,15 +217,7 @@ module.exports = {
       generateShapeIndex()
     })
     app.post('/api/global/shape/rename', ensureAdminLoggedIn(), (req, res) => module.exports.renameFile(shapesAppDir, req.body.from, req.body.to, res))
-    app.post('/api/global/shape/save', ensureAdminLoggedIn(), (req, res) => module.exports.writeShape(shapesAppDir, req.body.filePath, req.body.content, req.body.commitMessage, res))
     app.post('/api/global/shape/folder', ensureAdminLoggedIn(), (req, res) => module.exports.createFolder(shapesAppDir, req.body.filePath, res))
-
-    // =================================================================
-    // Handle system update files
-    //
-    // =================================================================
-    app.get('/api/updates/shapes', ensureAdminLoggedIn(), (req, res) => update.getLatestShapeRelease(res))
-    app.post('/api/updates/shapes', ensureAdminLoggedIn(), async (req, res) => update.upgradeTo(shapesAppDir, req.body.url, res))
   },
 
   listFiles: generic.listFiles,
@@ -321,33 +227,6 @@ module.exports = {
   deleteFile: generic.deleteFile,
   writeFile: generic.writeFile,
   createFolder: generic.createFolder,
-
-  writeShape: function (baseDir, subDir, content, reason, res) {
-    const io = require('../../comm/websocket').io
-
-    module.exports.writeFile(baseDir, subDir, content, res, (err) => {
-      // inform the browser that the processing of the
-      // code generation is ongoing
-      //
-      io.sockets.emit("file:generating", {
-        filePath: subDir
-      })
-
-      // create the js/png/md async to avoid a blocked UI
-      //
-      thumbnail(baseDir, subDir)
-
-      io.sockets.emit("file:generated", {
-        filePath: subDir,
-        imagePath: subDir.replace(".shape", ".png"),
-        jsPath: subDir.replace(".shape", ".js")
-      })
-
-      // commit the shape to the connected github backend
-      // (if configured)
-      update.commitShape(path.join(baseDir, subDir), subDir, reason)
-    })
-  },
 
   writeBrain: function (baseDir, subDir, content, res) {
     // "sanitize" is done in the base implementation as well. But we new the 'sanitize' in this method

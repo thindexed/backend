@@ -6,7 +6,6 @@ const http = require('http').Server(app)
 
 const { program } = require('commander')
 const bodyParser = require('body-parser')
-const colors = require('colors')
 const io = require('./comm/websocket').connect(http, {path: '/socket.io'})
 
 
@@ -44,7 +43,6 @@ runServer()
 async function  runServer() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true}));
-  app.get('/', (req, res) => res.redirect('/home/'));
 
   await storage.init(app, program)
 

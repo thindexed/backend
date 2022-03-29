@@ -30,4 +30,4 @@ build:
 install: build
 	@echo "Deploying..."
 
-	@cat ./deployments/deployment.yaml | sed "s~<image-name>~$(IMAGE_NAME)~g" | kubectl apply -f -
+	@cat ./deployments/deployment.tmpl | sed "s~<image-name>~$(IMAGE_NAME)~g" | kubectl apply -f -

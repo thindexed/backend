@@ -1,16 +1,11 @@
 const puppeteer = require('puppeteer');
-const isPi = require('detect-rpi');
 
 module.exports = {
 
   render: async (url) => {
 
     try {
-      let browser = null
-      if ( isPi())
-        browser = await puppeteer.launch({args:['--no-sandbox'], executablePath:'chromium-browser'})
-      else
-        browser = await puppeteer.launch()
+      let browser = await puppeteer.launch()
 
       const page = await browser.newPage()
       await page.goto(url)
