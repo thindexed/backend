@@ -6,7 +6,6 @@ const Strategy = require('passport-local').Strategy
 const bcrypt = require("bcrypt")
 const sanitize = require("../../util/sanitize-filepath")
 const generic = require("../_base_")
-const {generateShapeIndex} = require("../../converter/thumbnail")
 const classroom = require('./../../classroom')
 let {token_set, token_get} = require("./token-user")
 
@@ -83,7 +82,6 @@ module.exports = {
     brainsSharedDir = path.join(args.folder, "shared", "brains", path.sep)
     sheetsSharedDir = path.join(args.folder, "shared", "sheets", path.sep)
     const sheetsAppDir = path.normalize(path.join(__dirname, '..', '..', '..', 'repository', 'sheets') + path.sep)
-    const shapesAppDir = path.normalize(path.join(__dirname, '..', '..', '..', 'repository', 'shapes') + path.sep)
     const brainsAppDir = path.normalize(path.join(__dirname, '..', '..', '..', 'repository', 'brains') + path.sep)
 
     // Ensure that the required storage folder exists
@@ -200,24 +198,6 @@ module.exports = {
         res.send(pdf)
       })
     })
-
-    // =================================================================
-    // Handle system shape files
-    //
-    // =================================================================
-    app.get('/api/global/shape/list', (req, res) => module.exports.listFiles(shapesAppDir, req.query.path, res))
-    app.get('/api/global/shape/get', (req, res) => module.exports.getJSONFile(shapesAppDir, req.query.filePath, res))
-    app.get('/api/global/shape/image', (req, res) => module.exports.getBase64Image(shapesAppDir, req.query.filePath, res))
-    app.post('/api/global/shape/delete', ensureAdminLoggedIn(), (req, res) => {
-      module.exports.deleteFile(shapesAppDir, req.body.filePath)
-      module.exports.deleteFile(shapesAppDir, req.body.filePath.replace(".shape", ".js"))
-      module.exports.deleteFile(shapesAppDir, req.body.filePath.replace(".shape", ".md"))
-      module.exports.deleteFile(shapesAppDir, req.body.filePath.replace(".shape", ".custom"))
-      module.exports.deleteFile(shapesAppDir, req.body.filePath.replace(".shape", ".png"), res)
-      generateShapeIndex()
-    })
-    app.post('/api/global/shape/rename', ensureAdminLoggedIn(), (req, res) => module.exports.renameFile(shapesAppDir, req.body.from, req.body.to, res))
-    app.post('/api/global/shape/folder', ensureAdminLoggedIn(), (req, res) => module.exports.createFolder(shapesAppDir, req.body.filePath, res))
   },
 
   listFiles: generic.listFiles,
