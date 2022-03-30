@@ -1,14 +1,10 @@
 const path = require('path')
 const makeDir = require('make-dir')
 const shortid = require('../../util/shortid')
-const passport = require('passport')
-const Strategy = require('passport-local').Strategy
-const bcrypt = require("bcrypt")
 const sanitize = require("../../util/sanitize-filepath")
 const generic = require("../_base_")
 const classroom = require('./../../classroom')
 let {token_set, token_get} = require("./token-user")
-
 
 let restGroup = require("./rest-group")
 let restAssignment = require("./rest-assignment")
@@ -17,30 +13,6 @@ let brainsHomeDir = null
 let sheetsHomeDir = null
 let brainsSharedDir = null
 let sheetsSharedDir = null
-
-// Configure the local strategy for use by Passport.
-//
-// The local strategy require a `verify` function which receives the credentials
-// (`username` and `password`) submitted by the user.  The function must verify
-// that the password is correct and then invoke `cb` with a user object, which
-// will be set at `req.user` in route handlers after authentication.
-passport.use(new Strategy(
-  function (username, password, cb) {
-    classroom.users.getByUsername(username)
-      .then((user) => {
-        bcrypt.compare(password, user.password)
-          .then((result) => {
-            if (result) {
-              return cb(null, user)
-            }
-            return cb(null, false)
-          })
-      })
-      .catch(error => {
-        cb(null, false)
-      })
-  }))
-
 
 // convertToUserBaseFolder
 function userFolder(baseFolder, req) {
@@ -94,10 +66,6 @@ module.exports = {
     classroom.init(app, args)
     restGroup.init(app, args)
     restAssignment.init(app, args, sheetsSharedDir, brainsSharedDir)
-
-    // Initialize Passport and restore authentication state, if any, from the
-    // session.
-    app.use(passport.initialize())
 
     console.log("| You are using the " + "'multiple-user'".bold.green + " file storage engine.                   |")
     console.log("| This kind of storage is perfect for small or medium user groups.         |")

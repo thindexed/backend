@@ -7,7 +7,7 @@ exports.init = function(app, args){
   graph.init(app, args)
 }
 
-exports.users = require('./users')
+
 exports.groups = require('./groups')
 exports.assignments = require('./assignments')
 
