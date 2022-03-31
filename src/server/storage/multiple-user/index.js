@@ -23,7 +23,7 @@ function ensureLoggedIn(options) {
   return function (req, res, next) {
     let role = req.get("x-role")
     if ( role !== "admin" || role !== "user") {
-      res.send(401, 'string')
+      res.status(401).send('denie')
       return
     }
     next()
@@ -34,7 +34,7 @@ function ensureAdminLoggedIn(options) {
   return function (req, res, next) {
     let role = req.get("x-role")
     if ( role !== "admin") {
-      res.send(401, 'string')
+      res.status(401).send('denie')
       return
     }
     next();
