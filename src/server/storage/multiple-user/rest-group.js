@@ -35,25 +35,27 @@ exports.init = (app, args)=>{
 }
 
 exports.list = (req, res) => {
-    Promise.all([
-      classroom.graph.get({subject: "" + req.user.id, predicate: "owner"})
-        .then((groupSPOs) => {
-          return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "owner"})))
-        }),
-      classroom.graph.get({subject: "" + req.user.id, predicate: "member"})
-        .then((groupSPOs) => {
-          return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "member"})))
-        })
-    ])
-      .then((groups) => {
-        res.status(200).send(mapGroup(groups.flat()))
+  let userId = req.get("x-mail")
+  Promise.all([
+    classroom.graph.get({subject: userId, predicate: "owner"})
+      .then((groupSPOs) => {
+        return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "owner"})))
+      }),
+    classroom.graph.get({subject: userId, predicate: "member"})
+      .then((groupSPOs) => {
+        return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "member"})))
       })
-      .catch(error => {
-        res.status(500).send(error)
-      })
+  ])
+    .then((groups) => {
+      res.status(200).send(mapGroup(groups.flat()))
+    })
+    .catch(error => {
+      res.status(500).send(error)
+    })
 }
 
 exports.get = (req, res) => {
+  let userId = req.get("x-mail")
   Promise.all([
     // get all users of the group
     classroom.graph.get({predicate: "member", object: "" + req.params.id})
@@ -66,12 +68,12 @@ exports.get = (req, res) => {
         return Promise.all(groupSPOs.map(spo => classroom.users.get(spo.subject)))
       }),
     // the group itself either as as owner
-    classroom.graph.get({subject: "" + req.user.id,  predicate: "owner", object: req.params.id})
+    classroom.graph.get({subject: userId,  predicate: "owner", object: req.params.id})
       .then((groupSPOs) => {
         return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "owner"})))
       }),
     // or as member.
-    classroom.graph.get({subject: "" + req.user.id,  predicate: "member", object: req.params.id})
+    classroom.graph.get({subject: userId,  predicate: "member", object: req.params.id})
       .then((groupSPOs) => {
         return Promise.all(groupSPOs.map(spo => classroom.groups.get(spo.object, {role: "member"})))
       }),
@@ -100,9 +102,10 @@ exports.get = (req, res) => {
 }
 
 exports.del = (req, res) => {
+  let userId = req.get("x-mail")
   // ensure that the calling user is the owner of the group before we delete them
   //
-  classroom.graph.get({subject: req.user.id, predicate: "owner", object: req.params.id})
+  classroom.graph.get({subject: userId, predicate: "owner", object: req.params.id})
     .then((rv) => {
       if(rv.length===0){
         return Promise.reject("not owner of group")
@@ -148,14 +151,15 @@ exports.join = (req, res) => {
     return
   }
 
+  let userId = req.get("x-mail")
   classroom.groups.findByJoinToken(data.joinToken)
     .then((group) => {
-      classroom.graph.get({subject: req.user.id, predicate: "owner", object: group.id})
+      classroom.graph.get({subject: userId, predicate: "owner", object: group.id})
         .then((rv) => {
           if(rv.length>0){
             return Promise.reject("conflict. user is owner of group. join not possible")
           }
-          classroom.graph.put([{subject: req.user.id, predicate: "member", object: group.id}])
+          classroom.graph.put([{subject: userId, predicate: "member", object: group.id}])
           res.status(200).send(mapGroup(group))
         })
     })
@@ -166,7 +170,8 @@ exports.join = (req, res) => {
 
 
 exports.unjoin = (req, res) => {
-  classroom.graph.del({subject: req.user.id, predicate: "member", object: req.params.id})
+  let userId = req.get("x-mail")
+  classroom.graph.del({subject: userId, predicate: "member", object: req.params.id})
     .then(() => {
       res.status(200).send("done")
     })
@@ -183,13 +188,14 @@ exports.post = (req, res) => {
     return
   }
 
+  let userId = req.get("x-mail")
   data.id = shortid.generate()
   data.joinToken = shortid.generate()
 
   classroom.groups.create(data)
     .then(() => {
       // generate the triple in the graph DB to indicate, that I'm the owner
-      return classroom.graph.put({subject: req.user.id, predicate: "owner", object: data.id})
+      return classroom.graph.put({subject: userId, predicate: "owner", object: data.id})
     })
     .then(() => {
       req.params.id = data.id
