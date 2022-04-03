@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: backend
-        image: docker.io/freegroup/thindexed-backend:0.1.0-71
+        image: docker.io/freegroup/thindexed-backend:0.1.0-73
