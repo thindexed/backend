@@ -35,9 +35,6 @@ exports.init = (app, args)=>{
 }
 
 exports.list = (req, res) => {
-  if (!req.isAuthenticated || !req.isAuthenticated()) {
-    res.status(403).send("user not logged in")
-  } else {
     Promise.all([
       classroom.graph.get({subject: "" + req.user.id, predicate: "owner"})
         .then((groupSPOs) => {
@@ -54,7 +51,6 @@ exports.list = (req, res) => {
       .catch(error => {
         res.status(500).send(error)
       })
-  }
 }
 
 exports.get = (req, res) => {
