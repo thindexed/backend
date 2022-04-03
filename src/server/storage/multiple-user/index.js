@@ -22,7 +22,7 @@ function userFolder(baseFolder, req) {
 function ensureLoggedIn(options) {
   return function (req, res, next) {
     let role = req.get("x-role")
-    if ( role !== "admin" || role !== "user") {
+    if ( role !== "admin" && role !== "user") {
       res.status(401).send('denie')
       return
     }
