@@ -83,22 +83,23 @@ exports.get = (req, res) => {
         return Promise.all(assignmentSPOs.map(spo => classroom.assignments.get(spo.object)))
       })
   ])
-    .then((data) => {
-      // either you are "owner" (data[2]) or "member" (data[3])
-      // we merge the and use the first element....anyhow - the array contains only ONE element.
-      //
-      let group = {
-        members: mapUser(data[0]),
-        owner: mapUser(data[1][0]),
-        assignments: data[4],
-        ...data[2].concat(data[3])[0]
+  .then((data) => {
+    // either you are "owner" (data[2]) or "member" (data[3])
+    // we merge the and use the first element....anyhow - the array contains only ONE element.
+    //
+    let group = {
+      members: mapUser(data[0]),
+      owner: mapUser(data[1][0]),
+      assignments: data[4],
+      ...data[2].concat(data[3])[0]
 
-      }
-      res.status(200).send(mapGroup(group))
-    })
-    .catch((error) => {
-      res.status(500).send(error)
-    })
+    }
+    res.status(200).send(mapGroup(group))
+  })
+  .catch((error) => {
+    console.log(error)
+    res.status(500).send(error)
+  })
 }
 
 exports.del = (req, res) => {
